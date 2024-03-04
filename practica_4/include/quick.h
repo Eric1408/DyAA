@@ -2,7 +2,6 @@
 #define QUICK_SORT_H
 
 #include "DaC.h"
-#include <iostream>
 
 
 /**
@@ -14,10 +13,11 @@
  */
 class QuickSort : public DivideAndConquer {
  public:
+  QuickSort();
   bool small(const std::vector<int>&) const override;
-  std::vector<int> solveSmall(const std::vector<int>&) const override;
+  void solveSmall(std::vector<int>&) const override;
   void divide(const std::vector<int>&, std::vector<int>&, std::vector<int>&)  override;
-  std::vector<int> combine(const std::vector<int>&, const std::vector<int>&, const std::vector<int>&) const override;
+  void combine(std::vector<int>&, const std::vector<int>&, const std::vector<int>&) const override;
 };
 
 #endif

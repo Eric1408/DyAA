@@ -12,10 +12,11 @@
  */
 class MergeSort : public DivideAndConquer {
 public:
-  std::vector<int> solveSmall(const std::vector<int>&) const override;
+  MergeSort();
+  void solveSmall(std::vector<int>&) const override;
   bool small(const std::vector<int>&) const override;
   void divide(const std::vector<int>&, std::vector<int>&, std::vector<int>&) override;
-  std::vector<int> combine(const std::vector<int>&, const std::vector<int>&, const std::vector<int>&) const override;
+  void combine(std::vector<int>&, const std::vector<int>&, const std::vector<int>&) const override;
 };
 
 #endif

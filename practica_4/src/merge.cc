@@ -3,15 +3,28 @@
 
 
 /**
- * @brief Performs a small size merge sort on the input vector.
+ * @brief Constructs a MergeSort object.
  * 
- * This function takes an input vector of integers and returns a sorted vector using merge sort algorithm.
- * 
- * @param input The input vector of integers.
- * @return The sorted vector.
+ * This constructor initializes the MergeSort object by calling the base class constructor
+ * and setting the values of member variables a_, b_, and d_.
  */
-std::vector<int> MergeSort::solveSmall(const std::vector<int>& input) const {
-  return input;
+MergeSort::MergeSort() : DivideAndConquer() {
+  a_ = "2";
+  b_ = "/2"; 
+  d_ = "1";
+}
+
+
+
+/**
+ * Sorts a small input vector using the merge sort algorithm.
+ *
+ * @param input The input vector to be sorted.
+ */
+void MergeSort::solveSmall(std::vector<int>& input) const {
+  std::vector<int> result = input;
+  std::sort(result.begin(), result.end());
+  return;
 }
 
 
@@ -44,31 +57,30 @@ void MergeSort::divide(const std::vector<int>& input, std::vector<int>& left, st
 
 
 /**
- * @brief Combines two sorted vectors into a single sorted vector.
+ * Combines two sorted vectors into one sorted vector.
  * 
- * This function takes two sorted vectors, `left` and `right`, and combines them into a single sorted vector.
- * The resulting vector will contain all the elements from both `left` and `right`, and will be sorted in ascending order.
- * 
- * @param left The first sorted vector.
- * @param right The second sorted vector.
- * @return The combined sorted vector.
+ * @param input The vector to store the combined sorted elements.
+ * @param left The left vector to be combined.
+ * @param right The right vector to be combined.
  */
-std::vector<int> MergeSort::combine(const std::vector<int>& input, const std::vector<int>& left, const std::vector<int>& right) const {
-  std::vector<int> result;
+void MergeSort::combine(std::vector<int>& input, const std::vector<int>& left, const std::vector<int>& right) const {
+  //std::vector<int> result;
   size_t i = 0, j = 0;
-
+  input.clear();
+  
   while (i < left.size() && j < right.size()) {
     if (left[i] < right[j]) {
-      result.push_back(left[i]);
+      input.push_back(left[i]);
       ++i;
     } else {
-      result.push_back(right[j]);
+      input.push_back(right[j]);
       ++j;
     }
   }
 
-  result.insert(result.end(), left.begin() + i, left.end());
-  result.insert(result.end(), right.begin() + j, right.end());
+  input.insert(input.end(), left.begin() + i, left.end());
+  input.insert(input.end(), right.begin() + j, right.end());
 
-  return result;
+
+  return; 
 }
