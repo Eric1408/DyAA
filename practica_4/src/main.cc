@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "mergeSort.h"
-#include "quickSort.h"
+#include "../include/merge.h"
+#include "../include/quick.h"
 
 
 
@@ -15,11 +15,12 @@ std::vector<int> randomVector() {
   std::srand(static_cast<unsigned>(std::time(nullptr)));
 
   // Generate random number between 1 and 100
-  int size = std::rand() % 100 + 1;
+  //int size = std::rand() % 10 + 1;
+  int size = 6;
 
   std::vector<int> data(size);
   for (auto& c : data) {
-    c = std::rand() % 100 + 1;
+    c = std::rand() % 10 + 1;
   }
 
   return data;
@@ -37,34 +38,48 @@ void printVector(std::vector<int>& data) {
 
 
 void menu() {
-  while (true) {
+  char c = 'y';
+  while (c == 'y') {
     std::vector<int> data = randomVector();
+    // Wait one second to genereate a new random vector
+    //std::this_thread::sleep_for(std::chrono::seconds(1));
     std::vector<int> data2 = randomVector();
 
+    std::cout << "Random Vector 1: ";
     printVector(data);
+    std::cout << "Random Vector 2: ";
     printVector(data2);
     std::cout << std::endl;
 
-    // Medir el tiempo para MergeSort
+    std::vector<int> solution1;
+    std::vector<int> solution2;
+
+    // Measure the time for MergeSort
     auto startMerge = std::chrono::high_resolution_clock::now();
     MergeSort mergeSort;
-    mergeSort.solve(data);
+    solution1 = mergeSort.solve(data);
     auto endMerge = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> mergeTime = endMerge - startMerge;
 
-    // Medir el tiempo para QuickSort
+    // Measure the time for QuickSort
     auto startQuick = std::chrono::high_resolution_clock::now();
     QuickSort quickSort;
-    quickSort.solve(data2);
+    solution2 = quickSort.solve(data2);
     auto endQuick = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> quickTime = endQuick - startQuick;
 
-    // Imprimir los tiempos
-    std::cout << "MergeSort Time: " << mergeTime.count() << " seconds" << std::endl;
-    std::cout << "QuickSort Time: " << quickTime.count() << " seconds" << std::endl;
+    std::cout << "Vector Solved 1: ";
+    printVector(solution1);
+    std::cout << "Vector Solved 2: ";
+    printVector(solution2);
+    std::cout << std::endl;
 
-    printVector(data);
-    printVector(data2);
+    // Print times
+    std::cout << "MergeSort Time: " << mergeTime.count() << " seconds for a vector size of [" << data.size() << "]\n";
+    std::cout << "QuickSort Time: " << quickTime.count() << " seconds for a vector size of [" << data2.size() << "]\n";
+    std::cout << "\nDo u want continue? [y/n]: ";
+    std::cin >> c;
+    system("clear");
   }
 }
 

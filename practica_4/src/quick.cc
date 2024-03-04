@@ -2,12 +2,6 @@
 
 #include "../include/quick.h"
 
-void printV(std::vector<int>& data) {
-  for (auto& c : data) {
-    std::cout << c << " ";
-  }
-  std::cout << std::endl;
-}
 
 
 /**
@@ -43,7 +37,6 @@ bool QuickSort::small(const std::vector<int>& input) const {
  */
 void QuickSort::divide(const std::vector<int>& input, std::vector<int>& left, std::vector<int>& right)  {
   int pivot = input[0];
-  std::cout << "pivot : " << pivot << std::endl;
   left.clear();
   right.clear();
 
@@ -54,10 +47,6 @@ void QuickSort::divide(const std::vector<int>& input, std::vector<int>& left, st
       right.push_back(input[i]);
     }
   }
-  std::cout << "left : ";
-  printV(left);
-  std::cout << "right : ";
-  printV(right);
 }
 
 
