@@ -28,15 +28,30 @@ void DivideAndConquer::solve(std::vector<int>& input) {
     return; 
   }
 
+  recursiveCalls_++;
   // Divide the problem into subproblems
   std::vector<int> left, right;
   divide(input, left, right);
 
+  level_++;
+  if (level_ > maxLevels_) {
+    maxLevels_ = level_;
+  }
+  
   // Recursively solve the subproblems
   solve(left);
   solve(right);
 
+  level_--;
   // Combine the results of the subproblems
   combine(input, left, right);
+  
   return; 
+}
+
+
+
+void DivideAndConquer::showMod() const {
+  std::cout << "\t\x1B[33mMax level reached:\x1B[0m " << maxLevels_ << std::endl;
+  std::cout << "\t\x1B[33mNumber of recursive calls:\x1B[0m " << recursiveCalls_ << std::endl;
 }

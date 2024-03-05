@@ -9,7 +9,8 @@
 
 class DivideAndConquer {
  public:
-  virtual void solve(std::vector<int>&);
+  DivideAndConquer() : level_{1}, maxLevels_{1}, recursiveCalls_{0} {}
+  void solve(std::vector<int>&);
   
   virtual bool small(const std::vector<int>&) const = 0;
   virtual void solveSmall(std::vector<int>&) const = 0;
@@ -19,10 +20,16 @@ class DivideAndConquer {
   
   virtual std::string recurrence() const;
 
+  void showMod() const;
+
  protected:
   std::string a_;
   std::string b_;
   std::string d_;
+
+  int level_;
+  int maxLevels_;
+  int recursiveCalls_;
 };
 
 #endif
