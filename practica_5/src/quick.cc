@@ -2,16 +2,17 @@
 
 template <typename T>
 QuickSort<T>::QuickSort() : DivideAndConquer<T>() {
-  //a_ = "";
-  //b_ = " - 1";
-  //d_ = "1";
+  this->a_ = "";
+  this->b_ = " - 1";
+  this->d_ = "1";
 }
 
 template <typename T>
-void QuickSort<T>::solveSmall(std::vector<T>& input) const {
+std::vector<T> QuickSort<T>::solveSmall(std::vector<T>& input) const {
   std::vector<T> result = input;
   std::sort(result.begin(), result.end());
-  return;
+  
+  return result;
 }
 
 template <typename T>
@@ -35,12 +36,14 @@ void QuickSort<T>::divide(const std::vector<T>& input, std::vector<T>& left, std
 }
 
 template <typename T>
-void QuickSort<T>::combine(std::vector<T>& input, const std::vector<T>& left, const std::vector<T>& right) const {
+std::vector<T> QuickSort<T>::combine(std::vector<T>& input, const std::vector<T>& left, const std::vector<T>& right) const {
   T pivot = input[0];
-  input.clear();
-  input = left;
-  input.push_back(pivot);
-  input.insert(input.end(), right.begin(), right.end());
+  //input.clear();
+  std::vector<T> result;
+  
+  result = left;
+  result.push_back(pivot);
+  result.insert(result.end(), right.begin(), right.end());
 
-  return;
+  return result;
 }

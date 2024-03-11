@@ -31,6 +31,7 @@ std::vector<T> DivideAndConquer<T>::solve(std::vector<T>& input) {
   }
 
   recursiveCalls_++;
+ 
   // Divide the problem into subproblems
   std::vector<T> left, right;
   divide(input, left, right);
@@ -41,14 +42,13 @@ std::vector<T> DivideAndConquer<T>::solve(std::vector<T>& input) {
   }
   
   // Recursively solve the subproblems
-  solve(left);
-  solve(right);
+  std::vector<T> leftSolved = solve(left);
+  std::vector<T> rightSolved = solve(right); 
 
   level_--;
   // Combine the results of the subproblems
-  combine(input, left, right);
-
-  return input; 
+  
+  return combine(input, leftSolved, rightSolved); 
 }
 
 

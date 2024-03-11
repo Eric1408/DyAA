@@ -1,17 +1,18 @@
 #include "../include/merge.h" 
 
 template <typename T>
-MergeSort<T>::MergeSort() : DivideAndConquer<T>() {
-  //a_ = "2";
-  //b_ = "/2"; 
-  //d_ = "1";
+MergeSort<T>::MergeSort() {
+  this->a_ = "2";
+  this->b_ = "/2"; 
+  this->d_ = "1";
 }
 
 template <typename T>
-void MergeSort<T>::solveSmall(std::vector<T>& input) const {
+std::vector<T> MergeSort<T>::solveSmall(std::vector<T>& input) const {
   std::vector<T> result = input;
   std::sort(result.begin(), result.end());
-  return;
+  
+  return result;
 }
 
 template <typename T>
@@ -27,22 +28,23 @@ void MergeSort<T>::divide(const std::vector<T>& input, std::vector<T>& left, std
 }
 
 template <typename T>
-void MergeSort<T>::combine(std::vector<T>& input, const std::vector<T>& left, const std::vector<T>& right) const {
+std::vector<T> MergeSort<T>::combine(std::vector<T>& input, const std::vector<T>& left, const std::vector<T>& right) const {
   size_t i = 0, j = 0;
-  input.clear();
+  
+  std::vector<T> result;
   
   while (i < left.size() && j < right.size()) {
     if (left[i] < right[j]) {
-      input.push_back(left[i]);
+      result.push_back(left[i]);
       ++i;
     } else {
-      input.push_back(right[j]);
+      result.push_back(right[j]);
       ++j;
     }
   }
+  
+  result.insert(result.end(), left.begin() + i, left.end());
+  result.insert(result.end(), right.begin() + j, right.end());
 
-  input.insert(input.end(), left.begin() + i, left.end());
-  input.insert(input.end(), right.begin() + j, right.end());
-
-  return; 
+  return result; 
 }

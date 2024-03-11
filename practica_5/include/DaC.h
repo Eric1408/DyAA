@@ -14,10 +14,10 @@ class DivideAndConquer {
   std::vector<T> solve(std::vector<T>&);
   
   virtual bool small(const std::vector<T>&) const = 0;
-  virtual void solveSmall(std::vector<T>&) const = 0;
+  virtual std::vector<T> solveSmall(std::vector<T>&) const = 0;
   
   virtual void divide(const std::vector<T>&, std::vector<T>&, std::vector<T>&)  = 0;
-  virtual void combine(std::vector<T>&, const std::vector<T>&, const std::vector<T>&) const = 0;
+  virtual std::vector<T> combine(std::vector<T>&, const std::vector<T>&, const std::vector<T>&) const = 0;
   
   virtual std::string recurrence() const;
 
