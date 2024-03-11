@@ -1,0 +1,308 @@
+g++ -std=c++17 -Wall -Wextra -Iinclude -c -o build/main.o src/main.cc
+src/main.cc: In instantiation of ‘void menu() [with T = int]’:
+src/main.cc:176:14:   required from here
+src/main.cc:117:12: error: no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘std::vector<float>’)
+  117 |       data = randomFloatVector();
+      |       ~~~~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘const std::vector<int>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::vector<int>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = int; _Alloc = std::allocator<int>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::initializer_list<int>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:118:13: error: no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘std::vector<float>’)
+  118 |       data2 = randomFloatVector();
+      |       ~~~~~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘const std::vector<int>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::vector<int>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = int; _Alloc = std::allocator<int>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::initializer_list<int>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:120:12: error: no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘std::vector<char>’)
+  120 |       data = randomCharVector();
+      |       ~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘const std::vector<int>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::vector<int>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = int; _Alloc = std::allocator<int>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::initializer_list<int>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:121:13: error: no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘std::vector<char>’)
+  121 |       data2 = randomCharVector();
+      |       ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘const std::vector<int>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = int; _Alloc = std::allocator<int>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::vector<int>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = int; _Alloc = std::allocator<int>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::initializer_list<int>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc: In instantiation of ‘void menu() [with T = float]’:
+src/main.cc:178:16:   required from here
+src/main.cc:114:12: error: no match for ‘operator=’ (operand types are ‘std::vector<float>’ and ‘std::vector<int>’)
+  114 |       data = randomIntVector();
+      |       ~~~~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘const std::vector<float>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::vector<float>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = float; _Alloc = std::allocator<float>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::initializer_list<float>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:115:13: error: no match for ‘operator=’ (operand types are ‘std::vector<float>’ and ‘std::vector<int>’)
+  115 |       data2 = randomIntVector();
+      |       ~~~~~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘const std::vector<float>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::vector<float>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = float; _Alloc = std::allocator<float>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::initializer_list<float>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:120:12: error: no match for ‘operator=’ (operand types are ‘std::vector<float>’ and ‘std::vector<char>’)
+  120 |       data = randomCharVector();
+      |       ~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘const std::vector<float>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::vector<float>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = float; _Alloc = std::allocator<float>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::initializer_list<float>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:121:13: error: no match for ‘operator=’ (operand types are ‘std::vector<float>’ and ‘std::vector<char>’)
+  121 |       data2 = randomCharVector();
+      |       ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘const std::vector<float>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = float; _Alloc = std::allocator<float>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::vector<float>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = float; _Alloc = std::allocator<float>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<char>’ to ‘std::initializer_list<float>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc: In instantiation of ‘void menu() [with T = char]’:
+src/main.cc:180:15:   required from here
+src/main.cc:114:12: error: no match for ‘operator=’ (operand types are ‘std::vector<char>’ and ‘std::vector<int>’)
+  114 |       data = randomIntVector();
+      |       ~~~~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘const std::vector<char>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::vector<char>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = char; _Alloc = std::allocator<char>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::initializer_list<char>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:115:13: error: no match for ‘operator=’ (operand types are ‘std::vector<char>’ and ‘std::vector<int>’)
+  115 |       data2 = randomIntVector();
+      |       ~~~~~~^~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘const std::vector<char>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::vector<char>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = char; _Alloc = std::allocator<char>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<int>’ to ‘std::initializer_list<char>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:117:12: error: no match for ‘operator=’ (operand types are ‘std::vector<char>’ and ‘std::vector<float>’)
+  117 |       data = randomFloatVector();
+      |       ~~~~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘const std::vector<char>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::vector<char>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = char; _Alloc = std::allocator<char>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::initializer_list<char>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+src/main.cc:118:13: error: no match for ‘operator=’ (operand types are ‘std::vector<char>’ and ‘std::vector<float>’)
+  118 |       data2 = randomFloatVector();
+      |       ~~~~~~^~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/vector:72,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘const std::vector<char>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from src/main.cc:15:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = char; _Alloc = std::allocator<char>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::vector<char>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = char; _Alloc = std::allocator<char>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘std::vector<float>’ to ‘std::initializer_list<char>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+make: *** [makefile:25: build/main.o] Error 1
