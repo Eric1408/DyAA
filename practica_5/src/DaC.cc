@@ -23,7 +23,7 @@ std::string DivideAndConquer<T>::recurrence() const {
  * @param input The input vector representing the problem.
  */
 template <typename T>
-std::vector<T> DivideAndConquer<T>::solve(std::vector<T>& input) {
+std::vector<T> DivideAndConquer<T>::solve(std::vector<T>& input, const T target) {
   // Base case: if the problem is small, solve it directly
   if (small(input)) {
     solveSmall(input);
@@ -53,6 +53,18 @@ std::vector<T> DivideAndConquer<T>::solve(std::vector<T>& input) {
 
 
 
+template <typename T>
+void DivideAndConquer<T>::Hanoi(int n, char from, char to, char aux) {
+  if (n == 1) {
+    std::cout << "Move disk 1 from rod " << from << " to rod " << to << std::endl;
+    return;
+  }
+  Hanoi(n - 1, from, aux, to);
+  std::cout << "Move disk " << n << " from rod " << from << " to rod " << to << std::endl;
+  Hanoi(n - 1, aux, to, from);
+}
+
+// MODIFICATION
 template <typename T>
 void DivideAndConquer<T>::showMod() const {
   std::cout << "\t\x1B[33mMax level reached:\x1B[0m " << maxLevels_ << std::endl;

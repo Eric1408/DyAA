@@ -1,5 +1,3 @@
-#pragma once
-
 #include <ctime>
 #include <vector>
 #include <thread>
@@ -12,7 +10,6 @@
 #include "merge.cc"
 #include "quick.cc"
 #include "DaC.cc"
-#include "hanoi.cc"
 
 const int SIZE = 10;
 
@@ -239,7 +236,7 @@ void menu() {
       std::cout << "\t" << quickSort.recurrence() << std::endl;
       quickSort.showMod();
     
-    }
+    } 
     // Wait one second to genereate a new random vector
     //std::this_thread::sleep_for(std::chrono::seconds(1));
     std::cout << "\nDo u want continue? [y/n]: ";

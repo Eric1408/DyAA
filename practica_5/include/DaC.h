@@ -7,12 +7,13 @@
 #include <algorithm>
 
 
-template <typename T>
+template <typename T = int>
 class DivideAndConquer {
  public:
   DivideAndConquer() : level_{1}, maxLevels_{1}, recursiveCalls_{0} {}
-  std::vector<T> solve(std::vector<T>&);
-  
+  std::vector<T> solve(std::vector<T>&, const T = 0);
+  static void Hanoi(int, char, char, char);
+
   virtual bool small(const std::vector<T>&) const = 0;
   virtual std::vector<T> solveSmall(std::vector<T>&) const = 0;
   
