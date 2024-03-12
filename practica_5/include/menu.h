@@ -2,7 +2,7 @@
 
 #include <vector>
 
-void menu();
+void menu(int = 6);
 
 template <typename T>
 void runSortingExperiment(int);

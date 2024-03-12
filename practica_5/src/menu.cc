@@ -13,7 +13,7 @@
 #include "quick.cc"
 #include "binary.cc"
 
-const int SIZE = 6;
+int SIZE;
 
 /**
  * Generates a random vector of a specified type.
@@ -113,40 +113,48 @@ void runSortingExperiment(int algorithm) {
     solution = merge.solve(data, 0);
     std::cout << "\x1B[31mSolved Vector:\x1B[0m ";
     printVector(solution);
-
+    
     BinarySearch<T> binarySearch;
     T element;
     std::cout << "Choose an element to search: ";
     std::cin >> element;
+    
+    auto startBin = std::chrono::high_resolution_clock::now();
     binarySearch.solve(solution, element);
+    auto endBin = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> quickTime = endBin - startBin;
+
 
     if (binarySearch.getFound()) {
       std::cout << "Element: " << element << " found\n";
     } else {
       std::cout << "Element not found\n";
     }
+    std::cout << "\x1B[31mBinarySearch Time:\x1B[0m " << quickTime.count() << " milliseconds for a vector size of \x1B[45m["
+              << solution.size() << "]\x1B[0m\n";
+    std::cout << "\t" << binarySearch.recurrence() << std::endl;
 
   } else if (algorithm == 4) {
-    // HANOI
-    int n;
-    std::cout << "Choose the number of disks: ";
-    std::cin >> n;
-
+    std::vector<int> nValues = randomVector<int>();
+    
     // Mide el tiempo para Hanoi
-    auto startHanoi = std::chrono::high_resolution_clock::now();
     Hanoi<T> hanoi;
-    DivideAndConquer<T>::Hanoi(n, 'A', 'C', 'B');
+    auto startHanoi = std::chrono::high_resolution_clock::now();
+    for (int n : nValues) {
+      DivideAndConquer<T>::Hanoi(n, 'A', 'C', 'B');
+    }
     auto endHanoi = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> hanoiTime = endHanoi - startHanoi;
-
+    
     // Imprime los tiempos
     std::cout << "\x1B[31mHanoi Time:\x1B[0m " << hanoiTime.count() << " milliseconds for \x1B[45m["
-              << n << "]\x1B[0m disks\n";
+              << nValues.size() << "]\x1B[0m vector.size()\n";
     std::cout << "\t" << hanoi.recurrence() << std::endl;
   }
 }
 
-void menu() {
+void menu(int size) {
+  SIZE = size;
   char c = 'y';
   while (c == 'y') {
     system("clear");

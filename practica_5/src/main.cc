@@ -17,8 +17,18 @@
 #include "menu.h"
 
 
-int main() {
-  menu();
+int main(int argc, char* argv[]) {
+  std::string option{argv[1]};
+  if (option == "--normal") {
+    menu();
+  } else if (option == "--test") {
+    int size;
+    std::cout << "Choose the vector size: ";
+    std::cin >> size;
+    menu(size);
+  } else {
+    std::cerr << "Invalid option. Use --normal or --test." << std::endl;
+  }
   
   return 0;
 }

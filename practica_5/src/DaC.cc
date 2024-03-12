@@ -57,6 +57,7 @@ std::vector<T> DivideAndConquer<T>::solve(const std::vector<T>& input, const T t
 
 template <typename T>
 void DivideAndConquer<T>::Hanoi(int n, char from, char to, char aux) {
+  if (n == 0) return;
   if (n == 1) {
     std::cout << "Move disk 1 from rod " << from << " to rod " << to << std::endl;
     return;
