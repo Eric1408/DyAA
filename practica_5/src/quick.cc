@@ -8,10 +8,10 @@ QuickSort<T>::QuickSort() {
 }
 
 template <typename T>
-std::vector<T> QuickSort<T>::solveSmall(const std::vector<T>& input) const {
+std::vector<T> QuickSort<T>::solveSmall(const std::vector<T>& input) {
   std::vector<T> result = input;
   std::sort(result.begin(), result.end());
-  
+
   return result;
 }
 
@@ -21,7 +21,7 @@ bool QuickSort<T>::small(const std::vector<T>& input) const {
 }
 
 template <typename T>
-void QuickSort<T>::divide(const std::vector<T>& input, std::vector<std::vector<T>>& subproblems) {
+void QuickSort<T>::divide(const std::vector<T>& input, std::vector<std::vector<T>>& subproblems, const T& t) {
   T pivot = input[0];
   std::vector<T> equal, less, greater;
 

@@ -34,7 +34,7 @@ std::vector<T> DivideAndConquer<T>::solve(const std::vector<T>& input, const T t
  
   // Divide the problem into subproblems
   std::vector<std::vector<T>> subproblems;
-  divide(input, subproblems);
+  divide(input, subproblems, target);
 
   level_++;
   if (level_ > maxLevels_) {
@@ -44,7 +44,7 @@ std::vector<T> DivideAndConquer<T>::solve(const std::vector<T>& input, const T t
   // Recursively solve the subproblems
   std::vector<std::vector<T>> subproblemsSolved;
   for (const auto& subproblem : subproblems) {
-    subproblemsSolved.push_back(solve(subproblem));
+    subproblemsSolved.push_back(solve(subproblem, target));
   }
 
   level_--;

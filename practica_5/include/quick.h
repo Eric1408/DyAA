@@ -16,8 +16,8 @@ class QuickSort : public DivideAndConquer<T> {
  public:
   QuickSort();
   bool small(const std::vector<T>&) const override;
-  std::vector<T> solveSmall(const std::vector<T>&) const override;
-  void divide(const std::vector<T>&, std::vector<std::vector<T>>&) override;
+  std::vector<T> solveSmall(const std::vector<T>&) override;
+  void divide(const std::vector<T>&, std::vector<std::vector<T>>&, const T& = 0) override;
   std::vector<T> combine(const std::vector<T>&, const std::vector<std::vector<T>>&) const override;
 };
 

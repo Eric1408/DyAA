@@ -10,7 +10,7 @@ Hanoi<T>::Hanoi() {
 
 
 template <typename T>
-std::vector<T> Hanoi<T>::solveSmall(const std::vector<T>& input) const {
+std::vector<T> Hanoi<T>::solveSmall(const std::vector<T>& input) {
   std::vector<T> result = input;
   std::sort(result.begin(), result.end());
   
@@ -27,7 +27,7 @@ bool Hanoi<T>::small(const std::vector<T>& input) const {
 
 
 template <typename T>
-void Hanoi<T>::divide(const std::vector<T>& input, std::vector<std::vector<T>>& subp) {
+void Hanoi<T>::divide(const std::vector<T>& input, std::vector<std::vector<T>>& subp, const T& t) {
   
 }
 

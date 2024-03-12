@@ -69,7 +69,7 @@ void runSortingExperiment(int algorithm) {
     // Mide el tiempo para MergeSort
     auto startMerge = std::chrono::high_resolution_clock::now();
     MergeSort<T> mergeSort;
-    solution = mergeSort.solve(data);
+    solution = mergeSort.solve(data, 0);
     auto endMerge = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> mergeTime = endMerge - startMerge;
 
@@ -90,7 +90,7 @@ void runSortingExperiment(int algorithm) {
     // Mide el tiempo para QuickSort
     auto startQuick = std::chrono::high_resolution_clock::now();
     QuickSort<T> quickSort;
-    solution = quickSort.solve(data);
+    solution = quickSort.solve(data, 0);
     auto endQuick = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> quickTime = endQuick - startQuick;
 
@@ -108,10 +108,26 @@ void runSortingExperiment(int algorithm) {
     // Binary
     std::cout << "\x1B[31mRandom Vector:\x1B[0m ";
     printVector(data);
-    QuickSort<T> quickSort;
-    solution = quickSort.solve(data);
     
+    MergeSort<T> merge;
+    solution = merge.solve(data, 0);
+    std::cout << "\x1B[31mSolved Vector:\x1B[0m ";
+    printVector(solution);
+
+    BinarySearch<T> binarySearch;
+    T element;
+    std::cout << "Choose an element to search: ";
+    std::cin >> element;
+    binarySearch.solve(solution, element);
+
+    if (binarySearch.getFound()) {
+      std::cout << "Element: " << element << " found\n";
+    } else {
+      std::cout << "Element not found\n";
+    }
+
   } else if (algorithm == 4) {
+    // HANOI
     int n;
     std::cout << "Choose the number of disks: ";
     std::cin >> n;

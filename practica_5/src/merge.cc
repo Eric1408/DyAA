@@ -8,7 +8,7 @@ MergeSort<T>::MergeSort() {
 }
 
 template <typename T>
-std::vector<T> MergeSort<T>::solveSmall(const std::vector<T>& input) const {
+std::vector<T> MergeSort<T>::solveSmall(const std::vector<T>& input) {
   std::vector<T> result = input;
   std::sort(result.begin(), result.end());
   
@@ -21,7 +21,7 @@ bool MergeSort<T>::small(const std::vector<T>& input) const {
 }
 
 template <typename T>
-void MergeSort<T>::divide(const std::vector<T>& input, std::vector<std::vector<T>>& subp) {
+void MergeSort<T>::divide(const std::vector<T>& input, std::vector<std::vector<T>>& subp, const T& t) {
   size_t mid = input.size() / 2;
 
   // Dividir en dos partes, izquierda y derecha
