@@ -14,10 +14,10 @@ template <typename T>
 class MergeSort : public DivideAndConquer<T> {
 public:
   MergeSort();
-  std::vector<T> solveSmall(std::vector<T>&) const override;
+  std::vector<T> solveSmall(const std::vector<T>&) const override;
   bool small(const std::vector<T>&) const override;
-  void divide(const std::vector<T>&, std::vector<T>&, std::vector<T>&) override;
-  std::vector<T> combine(std::vector<T>&, const std::vector<T>&, const std::vector<T>&) const override;
+  void divide(const std::vector<T>&, std::vector<std::vector<T>>&) override;
+  std::vector<T> combine(const std::vector<T>&, const std::vector<std::vector<T>>&) const override;
 };
 
 #endif

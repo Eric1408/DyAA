@@ -2,7 +2,7 @@
 
 
 template <typename T>
-BinarySearch<T>::BinarySearch() : DivideAndConquer<T>() {
+BinarySearch<T>::BinarySearch() {
   this->a_ = "";
   this->b_ = "/2"; 
   this->d_ = "0";
@@ -11,7 +11,7 @@ BinarySearch<T>::BinarySearch() : DivideAndConquer<T>() {
 
 
 template <typename T>
-std::vector<T> BinarySearch<T>::solveSmall(std::vector<T>& input) const {
+std::vector<T> BinarySearch<T>::solveSmall(const std::vector<T>& input) const {
   std::vector<T> result = input;
   std::sort(result.begin(), result.end());
   
@@ -28,32 +28,40 @@ bool BinarySearch<T>::small(const std::vector<T>& input) const {
 
 
 template <typename T>
-void BinarySearch<T>::divide(const std::vector<T>& input, std::vector<T>& left, std::vector<T>& right) {
-  int mid = input.size() / 2;
-  left.assign(input.begin(), input.begin() + mid);
-  right.assign(input.begin() + mid, input.end());
+void BinarySearch<T>::divide(const std::vector<T>& input, std::vector<std::vector<T>>& subp) {
+  
 }
 
 
 
 template <typename T>
-std::vector<T> BinarySearch<T>::combine(std::vector<T>& input, const std::vector<T>& left, const std::vector<T>& right) const {
-  size_t i = 0, j = 0;
-  
-  std::vector<T> result;
-  
-  while (i < left.size() && j < right.size()) {
-    if (left[i] < right[j]) {
-      result.push_back(left[i]);
-      ++i;
-    } else {
-      result.push_back(right[j]);
-      ++j;
-    }
-  }
-  
-  result.insert(result.end(), left.begin() + i, left.end());
-  result.insert(result.end(), right.begin() + j, right.end());
+std::vector<T> BinarySearch<T>::combine(const std::vector<T>& input, const std::vector<std::vector<T>>& subproblems) const {
+  std::vector<T> combinedResult = input;
 
-  return result; 
+  for (const auto& subproblemResult : subproblems) {
+    // Realiza la combinación de los resultados de los subproblemas según tu lógica específica
+    size_t i = 0, j = 0;
+    size_t subproblemIndex = 0;
+
+    while (i < combinedResult.size() && j < subproblemResult.size()) {
+      if (combinedResult[i] < subproblemResult[j]) {
+        combinedResult[subproblemIndex++] = combinedResult[i++];
+      } else {
+        combinedResult[subproblemIndex++] = subproblemResult[j++];
+      }
+    }
+
+    while (i < combinedResult.size()) {
+      combinedResult[subproblemIndex++] = combinedResult[i++];
+    }
+
+    while (j < subproblemResult.size()) {
+      combinedResult[subproblemIndex++] = subproblemResult[j++];
+    }
+
+    // Actualiza el tamaño del resultado combinado después de la fusión
+    combinedResult.resize(subproblemIndex);
+  }
+
+  return combinedResult; 
 }

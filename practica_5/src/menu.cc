@@ -106,6 +106,11 @@ void runSortingExperiment(int algorithm) {
     quickSort.showMod();
   } else if (algorithm == 3) {
     // Binary
+    std::cout << "\x1B[31mRandom Vector:\x1B[0m ";
+    printVector(data);
+    QuickSort<T> quickSort;
+    solution = quickSort.solve(data);
+    
   } else if (algorithm == 4) {
     int n;
     std::cout << "Choose the number of disks: ";

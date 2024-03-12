@@ -23,7 +23,7 @@ std::string DivideAndConquer<T>::recurrence() const {
  * @param input The input vector representing the problem.
  */
 template <typename T>
-std::vector<T> DivideAndConquer<T>::solve(std::vector<T>& input, const T target) {
+std::vector<T> DivideAndConquer<T>::solve(const std::vector<T>& input, const T target) {
   // Base case: if the problem is small, solve it directly
   if (small(input)) {
     solveSmall(input);
@@ -33,22 +33,24 @@ std::vector<T> DivideAndConquer<T>::solve(std::vector<T>& input, const T target)
   recursiveCalls_++;
  
   // Divide the problem into subproblems
-  std::vector<T> left, right;
-  divide(input, left, right);
+  std::vector<std::vector<T>> subproblems;
+  divide(input, subproblems);
 
   level_++;
   if (level_ > maxLevels_) {
     maxLevels_ = level_;
   }
-  
+
   // Recursively solve the subproblems
-  std::vector<T> leftSolved = solve(left);
-  std::vector<T> rightSolved = solve(right); 
+  std::vector<std::vector<T>> subproblemsSolved;
+  for (const auto& subproblem : subproblems) {
+    subproblemsSolved.push_back(solve(subproblem));
+  }
 
   level_--;
   // Combine the results of the subproblems
   
-  return combine(input, leftSolved, rightSolved); 
+  return combine(input, subproblemsSolved); 
 }
 
 
