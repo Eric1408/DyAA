@@ -54,6 +54,15 @@ std::vector<T> DivideAndConquer<T>::solve(const std::vector<T>& input, const T t
 }
 
 
+template <typename T>
+bool DivideAndConquer<T>::Binary(const std::vector<T>& input, const T target, const int low, const int high) {
+  if (low > high) return false;
+  int mid = low + (high - low) / 2;
+  if (input[mid] == target) return true;
+  if (input[mid] > target) return Binary(input, target, low, mid - 1);
+  return Binary(input, target, mid + 1, high);
+}
+
 
 template <typename T>
 void DivideAndConquer<T>::Hanoi(int n, char from, char to, char aux) {

@@ -120,12 +120,14 @@ void runSortingExperiment(int algorithm) {
     std::cin >> element;
     
     auto startBin = std::chrono::high_resolution_clock::now();
-    binarySearch.solve(solution, element);
+    //binarySearch.solve(solution, element);
+    bool check;
+    check = DivideAndConquer<T>::Binary(solution, element, 0, solution.size() - 1);
     auto endBin = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> quickTime = endBin - startBin;
 
 
-    if (binarySearch.getFound()) {
+    if (check) {
       std::cout << "Element: " << element << " found\n";
     } else {
       std::cout << "Element not found\n";

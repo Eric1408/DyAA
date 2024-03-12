@@ -13,7 +13,8 @@ class DivideAndConquer {
   DivideAndConquer() : level_{1}, maxLevels_{1}, recursiveCalls_{0} {}
   std::vector<T> solve(const std::vector<T>&, const T);
   static void Hanoi(int, char, char, char);
-
+  static bool Binary(const std::vector<T>&, const T, const int, const int);
+  
   virtual bool small(const std::vector<T>&) const = 0;
   virtual std::vector<T> solveSmall(const std::vector<T>&) = 0;
   
