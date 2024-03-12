@@ -1,6 +1,6 @@
 # Nombre del compilador y flags
 CC=g++
-CFLAGS=-std=c++17 -Wall -Wextra -Iinclude
+CFLAGS=-std=c++17 -Wextra -Iinclude
 LDFLAGS=
 EXECUTABLE=myProgram
 RESU=resultados.txt

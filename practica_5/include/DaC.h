@@ -7,7 +7,7 @@
 #include <algorithm>
 
 
-template <typename T = int>
+template <typename T>
 class DivideAndConquer {
  public:
   DivideAndConquer() : level_{1}, maxLevels_{1}, recursiveCalls_{0} {}

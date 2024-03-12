@@ -15,19 +15,10 @@
 #include <iostream>
 
 #include "menu.h"
-#include "menu2.h"
 
 
 int main() {
-  std::string option;
-  std::cout << "choose between [PR-4] and [PR-5]";
-  std::cin >> option;
-
-  if (option == "PR-4")
-    menu();
-  else if (option == "PR-5") {
-    menu2();
-  }
+  menu();
   
   return 0;
 }
