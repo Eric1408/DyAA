@@ -120,7 +120,6 @@ void runSortingExperiment(int algorithm) {
     std::cin >> element;
     
     auto startBin = std::chrono::high_resolution_clock::now();
-    //binarySearch.solve(solution, element);
     bool check;
     check = DivideAndConquer<T>::Binary(solution, element, 0, solution.size() - 1);
     auto endBin = std::chrono::high_resolution_clock::now();
@@ -163,14 +162,13 @@ void menu(int size) {
     
     // Selección del tipo de datos
     int algorithm;
-    std::cout << "Choose algorithm [MergeSort[1], QuickSort[2], BinarySearch[3], HanoiProblem[4]]\n";
+    std::cout << "Choose algorithm [MergeSort[1], QuickSort[2], BinarySearch[3], HanoiProblem[4], MCD[5]]\n";
     std::cin >> algorithm;
     
     std::string type{"hanoi"};
-    if (algorithm == 1 || algorithm == 2 || algorithm == 3) {
+    if (algorithm == 1 || algorithm == 2 || algorithm == 3 || algorithm == 5) {
       std::cout << "Choose a data type [int, char, float]\n";
       std::cin >> type;
-  
     }
     
     if (type == "int") {
